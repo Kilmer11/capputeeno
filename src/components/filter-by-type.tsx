@@ -3,10 +3,6 @@ import { useContext } from "react";
 import { FilterContext } from "@/context/filter-context";
 import { FilterType } from "@/types/filter-types";
 
-interface FilterByTypeProps {
-
-}
-
 interface FilterItemProps {
     selected: boolean,
 }
@@ -15,6 +11,10 @@ const FilterList = styled.ul`
     display: flex;
     align-items: center;
     gap: 40px;
+
+    @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+        gap: 30px
+    }
 `
 
 const FilterItem = styled.li<FilterItemProps>`
@@ -29,6 +29,9 @@ const FilterItem = styled.li<FilterItemProps>`
 
     border-bottom: ${props => props.selected ? '4px solid var(--orange)' : 'none'};
 
+    @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+        font-size: 12px;
+    }
 `
 
 export function FilterByType() {

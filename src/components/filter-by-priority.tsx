@@ -28,6 +28,10 @@ const FilterContainer = styled.div`
 
         display: flex;
         align-items: center;
+
+        @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+            font-size: 12px;
+        }
     }
 `
 
@@ -53,6 +57,16 @@ const PriorityFilter = styled.ul`
         font-weight: 400;
         text-align: left;
         color: var(--dark-text);
+
+    }
+
+    @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+        left: -50%;
+        width: 180px;
+        
+        li {
+            font-size: 12px;
+        }
     }
 `
 

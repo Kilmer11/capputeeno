@@ -7,19 +7,27 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    margin-bottom: 24px;
     cursor: pointer;
+    margin-bottom: 30px;
 
     &:hover {
         scale: 1.05;
         transition: 200ms;
     }
+
+    @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+        width: 210px;
+    }
 `
 
 const ImageContainer = styled.img`
-    width: 256px;
+    position: relative;
     height: 300px;
     border-radius: 8px 8px 0px 0px;
+
+    @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+        height: 250px
+    }
 `
 
 const Content = styled.div`

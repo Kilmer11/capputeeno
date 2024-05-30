@@ -21,12 +21,20 @@ const TagHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 20px 160px;
+
+    @media (max-width: ${props => props.theme.desktopBreakpoints}) {
+        padding: 15px 40px;
+    }
 `
 const Logo = styled.a`
     color: var(--logo-color);
     font-weight: 400;
     font-size: 40px;
     line-height: 150%;
+
+    @media (max-width: ${props => props.theme.desktopBreakpoints}) {
+        font-size: 26px;
+    }
 `
 
 const Container = styled.div`

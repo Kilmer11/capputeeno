@@ -13,10 +13,15 @@ const InputHeader = styled.input`
     line-height: 22px;
     color: var(--dark-text);
     border: none;
+
+    @media (max-width: ${props => props.theme.desktopBreakpoints}) {
+        width: 250px;
+        font-size: 12px;
+        line-height: 15px;
+    }
 `
 
 const InputContainer = styled.div`
-    width: 352px;
     position: relative;
 
     svg {

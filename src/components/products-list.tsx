@@ -13,7 +13,11 @@ const Listagem = styled.div`
     grid-template-columns: repeat(auto-fill, 256px);
     justify-content: space-between;
     width: 100%;
-    margin-top: 24px;
+    margin-top: 30px;
+
+    @media(max-width: ${props => props.theme.desktopBreakpoints}) {
+        justify-content: center;
+    }
 `
 
 export function Productslist(props: ProductsListProps) {
