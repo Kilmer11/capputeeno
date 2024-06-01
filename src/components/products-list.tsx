@@ -28,7 +28,8 @@ export function Productslist(props: ProductsListProps) {
             key={product.id}
             title={product.name} 
             price={product.price_in_cents}
-            image={product.image_url}/>
+            image={product.image_url}
+            id={product.id}/>
         )}
         </Listagem>
     )
