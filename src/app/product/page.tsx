@@ -11,7 +11,6 @@ const Container = styled.div`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 22px;
 `
 
 const ProductContainer = styled.section`
@@ -22,7 +21,6 @@ const ProductContainer = styled.section`
     img {
         max-width: 640px;
         width: 50%;
-        height: 580px;
         border-radius: 4px;
     }
 `
@@ -104,7 +102,7 @@ export default function ProductPage({ searchParams }: { searchParams: {id: strin
                             <p className="descrição">DESCRIÇÃO</p>
                             <p className="descrição-content">{data?.description}</p>
                         </Info>
-                        <ButtonAddToCart/>
+                        <ButtonAddToCart data={data} searchParams={searchParams.id}/>
                     </Content>
                 </ProductContainer>
             </Container>

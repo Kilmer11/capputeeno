@@ -8,7 +8,6 @@ const Button = styled.button`
     display: flex;
     gap: 8px;
     align-items: center;
-    justify-content: center;
     color: var(--text);
     font-size: 14px;
     line-height: 21px;
@@ -16,6 +15,7 @@ const Button = styled.button`
     font-family: inherit;
     border: 0px;
     cursor: pointer;
+    margin-bottom: 22px;
 `
 
 interface BackButtonProps {

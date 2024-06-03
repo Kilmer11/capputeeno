@@ -18,9 +18,42 @@ const Button = styled.button`
     width: 100%;
 `
 
-export function ButtonAddToCart(){
+interface ButtonAddToCartProps {
+    searchParams: string,
+    data: any
+}
+
+export function ButtonAddToCart(props: ButtonAddToCartProps){
+
+    const handleAddToCart = () => {
+        let cartItems = localStorage.getItem('cart-items');
+        if(cartItems) {
+            let cartItemsArray = JSON.parse(cartItems);
+
+            let existingItemIndex = cartItemsArray.findIndex((item: { id: string }) => item.id === props.searchParams);
+ 
+            if(existingItemIndex != -1) {
+                cartItemsArray[existingItemIndex].quantity += 1; 
+            }else {
+                cartItemsArray.push({
+                    ...props.data,
+                    id: props.searchParams,
+                    quantity: 1
+                })
+            }
+            localStorage.setItem('cart-items', JSON.stringify(cartItemsArray));
+        }else {
+            const newCart = [{
+                ...props.data,
+                id: props.searchParams,
+                quantity: 1
+        }]
+            localStorage.setItem('cart-items', JSON.stringify(newCart));
+        }
+    }
+
     return (
-        <Button>
+        <Button onClick={handleAddToCart}>
             <BagIcon/>
             ADICIONAR AO CARRINHO
         </Button>

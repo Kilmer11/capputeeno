@@ -68,7 +68,7 @@ export function ProductCard(props: ProductCardProps) {
     const router = useRouter();
 
     const handleNavigate = () => {
-        router.push("/products?id="+ props.id);
+        router.push("/product?id="+ props.id);
     }
 
     return (
