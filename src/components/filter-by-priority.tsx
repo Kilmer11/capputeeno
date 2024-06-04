@@ -10,6 +10,8 @@ const FilterContainer = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    margin-bottom: 24px;
+    justify-content: flex-end;
 
     svg {
         margin-left: 12px;

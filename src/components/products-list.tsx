@@ -4,10 +4,6 @@ import { UseProducts } from "@/hooks/useProducts";
 import { ProductCard } from "./product-card";
 import { styled } from "styled-components";
 
-interface ProductsListProps {
-
-}
-
 const Listagem = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, 256px);
@@ -20,7 +16,7 @@ const Listagem = styled.div`
     }
 `
 
-export function Productslist(props: ProductsListProps) {
+export function Productslist() {
     const { data } = UseProducts();
     
     return (

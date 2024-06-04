@@ -12,12 +12,12 @@ const fetcher = (query: string): AxiosPromise<ProductsFetchResponse> => {
 }
 
 export function UseProducts() {
-    const { type, priority, search } = useContext(FilterContext);
+    const { type, priority, search, page } = useContext(FilterContext);
     const searchDeferred = useDeferredValue(search);
-    const query = FilterProducts(type, priority);
+    const query = FilterProducts(type, priority, page);
     const { data } = useQuery({
         queryFn: () => fetcher(query),
-        queryKey: ['products', type, priority],
+        queryKey: ['products', type, priority, page],
         staleTime: 1000 * 60
     });
 
